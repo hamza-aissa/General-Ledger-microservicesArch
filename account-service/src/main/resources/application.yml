@@ -1,0 +1,24 @@
+spring:
+  application:
+    name:
+      account-service
+  datasource:
+    url:'jdbc:h2:mem:accdb'
+  h2:
+    console:
+      enabled: true
+  jpa:
+    show_sql: true
+    hibernate:
+      ddl-auto: update
+  cloud:
+    config:
+      enabled: false 
+    discovery: 
+      enabled: false
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
