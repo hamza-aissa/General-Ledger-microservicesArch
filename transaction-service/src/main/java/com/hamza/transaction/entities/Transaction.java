@@ -3,50 +3,35 @@ package com.hamza.transaction.entities;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.math.BigDecimal;
-import java.time.LocalDateTime;
-
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 @Entity
-@Table(name = "transactions")
 public class Transaction {
-
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long transactionId;
-
+  private Long id;
   private String accountNumber;
-
-  private BigDecimal amount;
-
-  private TransactionType type;
-
-  private TransactionStatus status;
-
+  private Float amount;
   private String description;
 
-  private BigDecimal balanceAfter;
+  // Getters
+  public Long getId() {
+    return id;
+  }
 
-  private LocalDateTime transactionDate;
+  public String getAccountNumber() {
+    return accountNumber;
+  }
 
-}
+  public Float getAmount() {
+    return amount;
+  }
 
-enum TransactionType {
-  DEPOSIT,
-  WITHDRAWAL,
-  TRANSFER_IN,
-  TRANSFER_OUT
-}
+  public String getDescription() {
+    return description;
+  }
 
-enum TransactionStatus {
-  PENDING,
-  COMPLETED,
-  FAILED,
-  CANCELLED
 }

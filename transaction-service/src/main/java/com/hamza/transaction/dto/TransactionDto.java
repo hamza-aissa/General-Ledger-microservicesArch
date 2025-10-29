@@ -1,17 +1,17 @@
-package com.hamza.account.dto;
+package com.hamza.transaction.dto;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class AccountDto {
+public class TransactionDto {
   private Long id;
+
   private String accountNumber;
-  private String accountHolderName;
-  private Float balance;
+  private Float amount;
+  private String description;
 
 }
