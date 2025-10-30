@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.hamza.transaction.dto.TransactionDto;
+import com.hamza.transaction.dto.ApiResponseDto;
 import com.hamza.transaction.service.TransactionService;
 
 import lombok.AllArgsConstructor;
@@ -20,8 +20,8 @@ public class TransactionController {
   private TransactionService transactionService;
 
   @GetMapping("{id}")
-  public ResponseEntity<TransactionDto> getTransactionById(@PathVariable("id") Long id) {
-    return new ResponseEntity<TransactionDto>(transactionService.getTransactionById(id), HttpStatus.OK);
+  public ResponseEntity<ApiResponseDto> getTransactionById(@PathVariable("id") Long id) {
+    return new ResponseEntity<ApiResponseDto>(transactionService.getTransactionById(id), HttpStatus.OK);
   }
 
 }

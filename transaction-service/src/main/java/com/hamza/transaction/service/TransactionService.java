@@ -1,7 +1,7 @@
 package com.hamza.transaction.service;
 
-import com.hamza.transaction.dto.TransactionDto;
+import com.hamza.transaction.dto.ApiResponseDto;
 
 public interface TransactionService {
-  TransactionDto getTransactionById(Long id);
+  ApiResponseDto getTransactionById(Long id);
 }
