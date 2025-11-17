@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import com.hamza.transaction.dto.AccountDto;
 
-@FeignClient(url = "http://localhost:8080", value = "ACCOUNT")
+@FeignClient(name = "ACCOUNT-SERVICE")
 public interface ApiClient {
 
   @GetMapping("api/accounts/{number}")
