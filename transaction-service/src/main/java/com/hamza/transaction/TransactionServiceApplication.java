@@ -5,10 +5,11 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.reactive.function.client.WebClient;
-
+import org.springframework.cloud.openfeign.EnableFeignClients;
 import com.hamza.transaction.entities.Transaction;
 import com.hamza.transaction.repos.TransactionRepository;
 
+@EnableFeignClients
 @SpringBootApplication
 public class TransactionServiceApplication {
 
