@@ -4,9 +4,11 @@ spring:
   application:
     name: account-service
   profiles:
-    active: default
+    active: prod
   config:
-    import: "optional:configserver:http://localhost:9999/"
+    import:
+      - "classpath:application-prod.yml"
+      - "classpath:application-qa.yml"
   datasource:
     url: jdbc:h2:mem:accdb
 
@@ -23,7 +25,7 @@ spring:
     config:
       enabled: false
     discovery:
-      enabled: false
+      enabled: true
     gateway:
       locator:
         discovery: true
@@ -42,6 +44,7 @@ management:
     web:
       exposure:
         include: "*"
+
 build:
   version: 1
 

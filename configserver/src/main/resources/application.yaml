@@ -1,0 +1,17 @@
+
+spring:
+  application:
+    name: configserver
+  profiles:
+    active: git
+
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/hamza-aissa/config-repo
+          default-label: main
+          clone-on-start: true
+server:
+  port: 9999
+
