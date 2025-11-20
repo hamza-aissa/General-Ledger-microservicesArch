@@ -1,7 +1,0 @@
-spring:
-  config:
-    activate:
-      on-profile: "qa"
-author:
-  name: "Aissa Hamza qa"
-  email: "professional.aissa@gmail.com qa"

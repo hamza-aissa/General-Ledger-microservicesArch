@@ -8,16 +8,17 @@ spring:
   config:
     import: "optional:configserver:http://localhost:9999/"
   datasource:
-    url: jdbc:h2:mem:accdb
-
-  h2:
-    console:
-      enabled: true
-
+    url: jdbc:mysql://mysqldb:3306/test
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     show-sql: true
     hibernate:
       ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
 
   cloud:
     config:
